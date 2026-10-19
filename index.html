@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff4f8">
+  <title>Macaron Kitty｜奶油貓咪物語</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Macaron Kitty 首頁">
+        <span class="brand-mark">🐾</span>
+        <span><strong>Macaron Kitty</strong><small>奶油貓咪物語</small></span>
+      </a>
+      <div class="topbar-note"><span class="online-dot"></span> 今日也要好好陪貓咪</div>
+    </header>
+
+    <main>
+      <section class="welcome">
+        <p class="eyebrow">A LITTLE COZY CAT GAME</p>
+        <h1>給可愛的日常，<span>一點點奶油。</span></h1>
+        <p>放置玩具、準備點心，看看小貓今天想做什麼。</p>
+      </section>
+
+      <section class="stats-row" aria-label="貓咪狀態">
+        <article class="stat-card stat-pink"><span class="stat-icon">💗</span><div><small>親密度</small><strong id="affectionValue">10</strong></div><span class="stat-unit">點</span></article>
+        <article class="stat-card stat-lilac"><span class="stat-icon">🎀</span><div><small>互動次數</small><strong id="interactionValue">0</strong></div><span class="stat-unit">次</span></article>
+        <article class="stat-card stat-yellow"><span class="stat-icon">🍪</span><div><small>點心數</small><strong id="snackValue">0</strong></div><span class="stat-unit">份</span></article>
+      </section>
+
+      <div class="game-layout">
+        <section class="game-card">
+          <div class="scene-heading">
+            <div class="room-title">
+              <span class="room-icon">🏡</span>
+              <div>
+                <strong id="catNameDisplay">奶油的小房間</strong>
+                <label class="cat-name-control" for="catNameInput">
+                  <span>幫貓咪取個名字</span>
+                  <input id="catNameInput" type="text" maxlength="12" value="奶油" placeholder="輸入貓咪名字" autocomplete="off">
+                </label>
+              </div>
+            </div>
+            <span id="mood" class="mood-pill" aria-live="polite">☀️ 自由漫步中</span>
+          </div>
+
+          <div id="scene" class="scene" aria-label="貓咪房間。選擇物品後點擊房間放置，也可以拖曳物品進房間。">
+            <div class="window"><div class="window-sky"></div><div class="window-cross"></div><div class="window-sill"></div></div>
+            <div class="wall-shelf"><span>🌷</span><span>📚</span><span>🪴</span></div>
+            <div class="rug"></div>
+            <div class="cat-area">
+              <div id="catSprite" class="cat-sprite" role="img" aria-label="奶油正在活動">🐈</div>
+              <div id="catShadow" class="cat-shadow"></div>
+            </div>
+            <div id="bubble" class="speech-bubble" hidden></div>
+            <div id="placedItems" class="placed-items"></div>
+            <div id="growthBadge" class="growth-badge" hidden></div>
+            <div class="room-sign">sweet home ♡</div>
+            <div id="sceneHint" class="scene-hint">選一個右側物品，再點房間放置吧！</div>
+          </div>
+
+          <div class="scene-footer">
+            <span><span class="online-dot"></span> <span id="statusText">貓咪正在等你</span></span>
+            <button id="resetButton" class="text-button" type="button">↻ 重新開始</button>
+          </div>
+        </section>
+
+        <aside class="toy-panel">
+          <div class="panel-heading">
+            <div><p class="eyebrow">PICK A LITTLE GIFT</p><h2>互動物品箱</h2></div>
+            <span class="item-count">22 ITEMS</span>
+          </div>
+          <p class="panel-description">點選物品後，再點房間放置；也可以直接拖曳。</p>
+          <div class="category-tabs" role="group" aria-label="物品分類">
+            <button class="category-tab active" type="button" data-category="all" aria-pressed="true">全部</button>
+            <button class="category-tab" type="button" data-category="toy" aria-pressed="false">玩具</button>
+            <button class="category-tab" type="button" data-category="food" aria-pressed="false">點心</button>
+            <button class="category-tab" type="button" data-category="cozy" aria-pressed="false">生活</button>
+          </div>
+          <div id="toyGrid" class="toy-grid"></div>
+          <div class="safety-note"><span>💡</span><p><strong>小提醒</strong><br>咖啡和巧克力不適合貓咪，遊戲裡也會被小貓拒絕喔。</p></div>
+        </aside>
+      </div>
+      <footer class="page-footer">Made with ♡ for little cats <span>·</span> Macaron Kitty</footer>
+    </main>
+  </div>
+  <div id="liveAnnouncement" class="sr-only" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
